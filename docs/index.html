@@ -361,18 +361,96 @@
   </section>
 
   <section id="booking">
-    <h2>Book service</h2>
+  <h2>Request Service</h2>
+
+  <div class="grid two">
+
+    <!-- LEFT SIDE -->
     <div class="bookingBox">
       <span class="kicker"><span class="dot"></span> Quick response</span>
+
       <div class="bigPhone">805-380-8312</div>
-      <p class="muted" style="margin:0 0 16px">Text or call to get back up and running today.</p>
+
+      <p class="muted" style="margin:0 0 16px">
+        Text or call for immediate help, or send a repair request below.
+      </p>
+
       <div class="cta" style="justify-content:flex-start">
         <a class="btn primary" href="tel:+18053808312">Call now</a>
-        <a class="btn" id="bookingTextBtn" href="sms:+18053808312">Text repair request</a>
+        <a class="btn" id="bookingTextBtn" href="sms:+18053808312">
+          Text repair request
+        </a>
       </div>
-      <div class="notice"><strong style="color:var(--ink)">Rate:</strong> $50/hour. Emergency refrigerator repair and same-day service also available.</div>
+
+      <div class="notice">
+        <strong style="color:var(--ink)">Rate:</strong>
+        $50/hour. Emergency refrigerator repair and same-day service may be available.
+      </div>
     </div>
-  </section>
+
+    <!-- RIGHT SIDE -->
+    <form id="serviceForm" class="card" style="display:grid;gap:12px">
+
+      <div>
+        <label for="name">Name</label>
+        <input id="name" name="name" required />
+      </div>
+
+      <div>
+        <label for="phone">Phone</label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          placeholder="(805) 555-5555"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="appliance">Appliance</label>
+        <select id="appliance" name="appliance" required>
+          <option value="" selected disabled>Select one</option>
+          <option>Refrigerator</option>
+          <option>Washer</option>
+          <option>Dryer</option>
+          <option>Dishwasher</option>
+          <option>Microwave</option>
+          <option>Stove / Oven</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="brand">Brand</label>
+        <input
+          id="brand"
+          name="brand"
+          placeholder="Samsung, LG, Whirlpool..."
+        />
+      </div>
+
+      <div>
+        <label for="details">Problem Details</label>
+        <textarea
+          id="details"
+          name="details"
+          placeholder="What is the appliance doing?"
+          required
+        ></textarea>
+      </div>
+
+      <button class="btn primary" type="submit">
+        Send Request
+      </button>
+
+      <p class="tiny" style="margin:0">
+        This opens your email app and creates a repair request automatically.
+      </p>
+
+    </form>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -430,6 +508,45 @@
     document.addEventListener("keydown", e => { if(e.key === "Escape") closeMenu(); });
     mobileMenu.querySelectorAll("[data-close-menu]").forEach(el => el.addEventListener("click", closeMenu));
   }
+  // ===== Repair request form =====
+
+const serviceForm = document.getElementById("serviceForm");
+
+if(serviceForm){
+
+  serviceForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const appliance = document.getElementById("appliance").value;
+    const brand = document.getElementById("brand").value.trim();
+    const details = document.getElementById("details").value.trim();
+
+    const subject =
+      `Repair Request - ${appliance} - ${name}`;
+
+    const body =
+`Repair Request
+
+Name: ${name}
+Phone: ${phone}
+
+Appliance: ${appliance}
+Brand: ${brand}
+
+Problem:
+${details}
+
+— Sent from Brink's Appliance Repair website`;
+
+    const mailto =
+      `mailto:info@imgdgroup.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailto;
+  });
+
+}
 </script>
 </body>
 </html>
