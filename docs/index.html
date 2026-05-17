@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brink's Appliance Repair Service | Woodland Hills</title>
+  <meta name="description" content="Brink's Appliance Repair Service — local, reliable appliance repair. $50/hour. Emergency refrigerator repair and same-day service available. Call or text 805-380-8312." />
+  <meta property="og:title" content="Brink's Appliance Repair Service" />
+  <meta property="og:description" content="Local • Reliable • Honest • Affordable appliance repair. Call or text 805-380-8312." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#F7F3EA" />
+
+  <style>
+    :root{
+      --bg:#F7F3EA;
+      --surface:#FFFFFF;
+      --surface2:#EFE7DA;
+      --ink:#1F2933;
+      --muted:#5D6875;
+      --line:rgba(31,41,51,.12);
+      --line2:rgba(31,41,51,.18);
+      --blue:#1E5AA8;
+      --blue2:#E6F0FF;
+      --gold:#F4B942;
+      --green:#2E8B57;
+      --red:#B42318;
+      --radius:20px;
+      --max:1080px;
+      --shadow:0 18px 48px rgba(31,41,51,.08);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--bg)}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      background:linear-gradient(180deg,#FBF8F1 0%, var(--bg) 40%, #F3ECDD 100%);
+      color:var(--ink);
+      line-height:1.6;
+      font-size:16px;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:26px 20px}
+    .muted{color:var(--muted)}
+    .small{font-size:14px;color:var(--muted)}
+    .tiny{font-size:13px;color:var(--muted)}
+    .divider{height:1px;background:var(--line);margin:20px 0}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(247,243,234,.9);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:230px;
+    }
+    .mark{
+      width:44px;
+      height:44px;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--blue),#0D2F5F);
+      color:white;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      letter-spacing:-.04em;
+      box-shadow:0 10px 26px rgba(30,90,168,.18);
+    }
+    .brandTitle{
+      font-size:14px;
+      line-height:1.1;
+      font-weight:900;
+      letter-spacing:.05em;
+      text-transform:uppercase;
+    }
+    .brandSub{font-size:12px;color:var(--muted);margin-top:3px}
+    nav.links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    nav.links a{
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:750;
+      color:var(--muted);
+    }
+    nav.links a:hover{background:rgba(31,41,51,.05);color:var(--ink)}
+
+    .cta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:10px 13px;
+      border-radius:999px;
+      border:1px solid var(--line2);
+      background:rgba(255,255,255,.45);
+      color:var(--ink);
+      font-size:13px;
+      font-weight:850;
+      cursor:pointer;
+      white-space:nowrap;
+      transition:transform .08s ease, background .15s ease;
+    }
+    .btn:hover{background:#fff}
+    .btn:active{transform:translateY(1px)}
+    .btn.primary{background:var(--blue);border-color:var(--blue);color:white}
+    .btn.primary:hover{background:#174987}
+    .btn.emergency{background:var(--red);border-color:var(--red);color:white}
+
+    .menuBtn{display:none}
+    .hamburger{width:18px;height:2px;background:var(--ink);position:relative;border-radius:99px}
+    .hamburger:before,.hamburger:after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--ink);border-radius:99px}
+    .hamburger:before{top:-6px}.hamburger:after{top:6px}
+
+    .menuOverlay{position:fixed;inset:0;background:rgba(31,41,51,.35);z-index:50;backdrop-filter:blur(4px)}
+    .mobileMenu{
+      position:fixed;top:0;right:0;height:100vh;width:min(84vw,360px);
+      background:var(--bg);z-index:60;padding:18px;border-left:1px solid var(--line);
+      transform:translateX(102%);transition:transform .18s ease;display:grid;align-content:start;gap:12px;
+    }
+    .mobileMenu.open{transform:translateX(0)}
+    .mobileMenuTop{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .mobileMenuActions{display:grid;gap:10px}.mobileMenuNav{display:grid;gap:8px}
+    .mobileMenuNav a{padding:10px 12px;border-radius:14px;border:1px solid var(--line);font-weight:800;color:var(--muted);background:rgba(255,255,255,.4)}
+
+    @media(max-width:920px){nav.links,.ctaDesktop{display:none}.menuBtn{display:inline-flex}.brand{min-width:0}}
+    @media(min-width:921px){.mobileMenu,.menuOverlay{display:none!important}}
+
+    .hero{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+    .heroMain{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,#fff,rgba(255,255,255,.62));
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+    .heroSide{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,var(--blue2),#fff);
+      padding:22px;
+      box-shadow:var(--shadow);
+      display:grid;
+      align-content:start;
+      gap:14px;
+    }
+    .kicker{
+      display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid var(--line);
+      border-radius:999px;background:rgba(30,90,168,.08);font-size:12px;font-weight:900;color:var(--blue);
+      letter-spacing:.06em;text-transform:uppercase;
+    }
+    .dot{width:8px;height:8px;border-radius:99px;background:var(--gold)}
+    h1{font-size:44px;line-height:1.03;letter-spacing:-.04em;margin:14px 0 10px;font-weight:950}
+    .lead{font-size:17px;color:var(--muted);max-width:62ch;margin:0 0 16px}
+    .pillRow{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 20px}
+    .pill{padding:8px 12px;border-radius:14px;border:1px solid var(--line2);background:rgba(31,41,51,.03);font-size:13px;font-weight:900}
+    .pill.hot{background:rgba(180,35,24,.09);border-color:rgba(180,35,24,.18);color:var(--red)}
+    .pill.good{background:rgba(46,139,87,.10);border-color:rgba(46,139,87,.20);color:var(--green)}
+
+    section{padding:28px 0}
+    h2{margin:0 0 12px;font-size:14px;letter-spacing:.10em;text-transform:uppercase;color:var(--muted);font-weight:950}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .grid.two{grid-template-columns:1fr 1fr}
+    @media(max-width:900px){.grid,.grid.two{grid-template-columns:1fr}}
+    .card{
+      border:1px solid var(--line);border-radius:18px;padding:18px;background:rgba(255,255,255,.72);
+      box-shadow:0 10px 28px rgba(31,41,51,.05);
+    }
+    .card h3{margin:0 0 8px;font-size:17px;font-weight:950}
+    .card p{margin:0;color:var(--muted);font-size:14.5px}
+    .card ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px;display:grid;gap:6px}
+    .notice{margin-top:14px;padding:15px;border:1px dashed var(--line2);border-radius:16px;background:rgba(239,231,218,.5);color:var(--muted);font-size:14px}
+
+    .applianceGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media(max-width:900px){.applianceGrid{grid-template-columns:1fr 1fr}}
+    @media(max-width:540px){.applianceGrid{grid-template-columns:1fr}}
+    .appliance{border:1px solid var(--line);border-radius:18px;padding:16px;background:#fff}
+    .appliance .emoji{font-size:24px;margin-bottom:6px}
+    .appliance strong{font-weight:950}
+    .brands{display:flex;flex-wrap:wrap;gap:9px}
+    .brandChip{padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:13px;font-weight:800;color:var(--muted)}
+    .areas{columns:3;column-gap:30px;color:var(--muted);font-size:14px}
+    @media(max-width:800px){.areas{columns:2}}
+    @media(max-width:520px){.areas{columns:1}}
+
+    .bookingBox{border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,#fff,var(--blue2));padding:20px;box-shadow:var(--shadow)}
+    .bigPhone{font-size:28px;font-weight:950;letter-spacing:-.02em;margin:4px 0 12px}
+
+    footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+    .footerGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:start}
+    @media(max-width:900px){.footerGrid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Brink's Appliance Repair Service home">
+        <div class="mark">B</div>
+        <div>
+          <div class="brandTitle">Brink's Appliance Repair Service</div>
+          <div class="brandSub">Woodland Hills • Local appliance repair</div>
+        </div>
+      </a>
+
+      <nav class="links" aria-label="Site navigation">
+        <a href="#services">Services</a>
+        <a href="#appliances">Appliances</a>
+        <a href="#brands">Brands</a>
+        <a href="#areas">Areas</a>
+        <a href="#booking">Book</a>
+      </nav>
+
+      <div class="cta">
+        <div class="ctaDesktop">
+          <a class="btn" href="tel:+18053808312">Call</a>
+          <a class="btn" id="textBtn" href="sms:+18053808312">Text</a>
+          <a class="btn primary" href="#booking">Book repair</a>
+        </div>
+        <button class="btn menuBtn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="menuOverlay" id="menuOverlay" hidden></div>
+<aside class="mobileMenu" id="mobileMenu" aria-hidden="true">
+  <div class="mobileMenuTop">
+    <div style="display:flex;align-items:center;gap:10px">
+      <div class="mark">B</div>
+      <div>
+        <div class="brandTitle" style="font-size:13px">Brink's Appliance Repair</div>
+        <div class="brandSub">Local • Reliable • Honest</div>
+      </div>
+    </div>
+    <button class="btn" id="closeMenuBtn" type="button">Close</button>
+  </div>
+  <div class="divider"></div>
+  <div class="mobileMenuActions">
+    <a class="btn" href="tel:+18053808312">Call 805-380-8312</a>
+    <a class="btn" id="textBtnMobile" href="sms:+18053808312">Text now</a>
+    <a class="btn primary" href="#booking" data-close-menu>Book repair</a>
+  </div>
+  <div class="divider"></div>
+  <nav class="mobileMenuNav">
+    <a href="#services" data-close-menu>Services</a>
+    <a href="#appliances" data-close-menu>Appliances</a>
+    <a href="#brands" data-close-menu>Brands</a>
+    <a href="#areas" data-close-menu>Service Areas</a>
+    <a href="#booking" data-close-menu>Book</a>
+  </nav>
+</aside>
+
+<main id="top" class="wrap">
+  <section class="hero" aria-label="Hero">
+    <div class="heroMain">
+      <span class="kicker"><span class="dot"></span> Quick response • Local technician</span>
+      <h1>Appliance repair that’s local, honest, and affordable.</h1>
+      <p class="lead">Brink’s Appliance Repair Service provides troubleshooting and repair for major home appliances, with emergency refrigerator repair and same-day service available when possible.</p>
+      <div class="pillRow">
+        <div class="pill good">$50 / hour</div>
+        <div class="pill hot">Emergency refrigerator repair</div>
+        <div class="pill">Text or call 805-380-8312</div>
+      </div>
+      <div class="cta" style="justify-content:flex-start">
+        <a class="btn primary" href="tel:+18053808312">Call now</a>
+        <a class="btn" id="heroTextBtn" href="sms:+18053808312">Text for repair</a>
+        <a class="btn" href="#appliances">See what I repair</a>
+      </div>
+    </div>
+
+    <div class="heroSide">
+      <h2 style="margin:0">Why customers call Brink’s</h2>
+      <div class="card" style="box-shadow:none;background:#fff">
+        <h3>🙂 Honest work</h3>
+        <p>Reasonable rates and clear communication before the work begins.</p>
+      </div>
+      <div class="card" style="box-shadow:none;background:#fff">
+        <h3>⚡ Quick response</h3>
+        <p>Text or call for availability, service questions, and urgent repair needs.</p>
+      </div>
+      <div class="card" style="box-shadow:none;background:#fff">
+        <h3>⭐ Warranty-certified experience</h3>
+        <p>Certified for warranty repair across 22 appliance brands.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Repair, not guessing</h3>
+        <p>Years of experience troubleshooting appliance problems and fixing the root issue.</p>
+      </div>
+      <div class="card">
+        <h3>Local reputation</h3>
+        <p>A local technician serving local customers, built through referrals and reliable work.</p>
+      </div>
+      <div class="card">
+        <h3>Helpful guidance</h3>
+        <p>Free tips and practical advice are shared throughout the process when helpful.</p>
+      </div>
+    </div>
+    <div class="notice"><strong style="color:var(--ink)">Emergency same-day service available:</strong> refrigerator repair and urgent appliance issues may be available depending on schedule and location.</div>
+  </section>
+
+  <section id="appliances">
+    <h2>Appliances repaired</h2>
+    <div class="applianceGrid">
+      <div class="appliance"><div class="emoji">🔥</div><strong>Dryers</strong><p class="small">Not heating, taking too long, noisy, or not starting.</p></div>
+      <div class="appliance"><div class="emoji">💧</div><strong>Washers</strong><p class="small">Not draining, leaking, noisy, shaking, or error codes.</p></div>
+      <div class="appliance"><div class="emoji">❄️</div><strong>Refrigerators</strong><p class="small">Not cooling, leaking, noisy, ice maker issues, or error codes.</p></div>
+      <div class="appliance"><div class="emoji">🍳</div><strong>Stoves & ovens</strong><p class="small">Not heating, ignition issues, uneven cooking, or temperature problems.</p></div>
+      <div class="appliance"><div class="emoji">🫧</div><strong>Dishwashers</strong><p class="small">Leaking, not draining, not cleaning well, or error codes.</p></div>
+      <div class="appliance"><div class="emoji">⚡</div><strong>Microwaves</strong><p class="small">Stopped working, handle issues, tripping breaker, or error codes.</p></div>
+    </div>
+  </section>
+
+  <section id="brands">
+    <h2>Brands serviced</h2>
+    <div class="card">
+      <h3>All major brands, including luxury and commercial brands</h3>
+      <p class="small" style="margin-bottom:14px">Specializing in premium brands while also servicing everyday household appliances.</p>
+      <div class="brands">
+        <span class="brandChip">Samsung</span><span class="brandChip">LG</span><span class="brandChip">Whirlpool</span><span class="brandChip">GE</span><span class="brandChip">Maytag</span><span class="brandChip">Bosch</span><span class="brandChip">KitchenAid</span><span class="brandChip">Frigidaire</span><span class="brandChip">Sub-Zero</span><span class="brandChip">Viking</span><span class="brandChip">Wolf</span><span class="brandChip">Cove</span><span class="brandChip">Thermador</span><span class="brandChip">Gaggenau</span><span class="brandChip">Miele</span><span class="brandChip">Dacor</span><span class="brandChip">SKS</span><span class="brandChip">JennAir</span><span class="brandChip">Amana</span><span class="brandChip">Electrolux</span><span class="brandChip">LG Studio</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas">
+    <h2>Service areas</h2>
+    <div class="card">
+      <p class="small" style="margin-bottom:14px">Serving Woodland Hills and surrounding areas throughout the Valley and Ventura County.</p>
+      <div class="areas">
+        Ventura<br>Camarillo<br>Santa Rosa<br>Dos Vientos<br>Newbury Park<br>Port Hueneme<br>Carpinteria<br>Ojai<br>Northridge<br>Chatsworth<br>Porter Ranch<br>Encino<br>Tarzana<br>Woodland Hills<br>Canoga Park<br>Winnetka<br>West Hills<br>Calabasas<br>Hidden Hills<br>Agoura Hills<br>Oak Park<br>Westlake Village<br>Thousand Oaks<br>Lynn Ranch<br>Moorpark<br>Simi Valley<br>Topanga
+      </div>
+    </div>
+  </section>
+
+  <section id="booking">
+    <h2>Book service</h2>
+    <div class="bookingBox">
+      <span class="kicker"><span class="dot"></span> Quick response</span>
+      <div class="bigPhone">805-380-8312</div>
+      <p class="muted" style="margin:0 0 16px">Text or call with your appliance type, brand, model if available, and what problem you’re seeing.</p>
+      <div class="cta" style="justify-content:flex-start">
+        <a class="btn primary" href="tel:+18053808312">Call now</a>
+        <a class="btn" id="bookingTextBtn" href="sms:+18053808312">Text repair request</a>
+      </div>
+      <div class="notice"><strong style="color:var(--ink)">Rate:</strong> $50/hour. Emergency refrigerator repair and same-day service may be available.</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footerGrid">
+      <div style="display:flex;gap:10px;align-items:center">
+        <div class="mark">B</div>
+        <div>
+          <div style="font-weight:950;letter-spacing:.06em;text-transform:uppercase;color:var(--ink)">Brink's Appliance Repair Service</div>
+          <div class="tiny">Local • Reliable • Honest • Affordable</div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div><strong style="color:var(--ink)">Call/Text:</strong> 805-380-8312</div>
+        <div class="tiny">Woodland Hills & surrounding areas</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const PHONE = "+18053808312";
+  const SMS_MESSAGE = encodeURIComponent("Hi Brink's Appliance Repair Service, I need help with an appliance repair.\n\nAppliance type:\nBrand:\nProblem:\nCity:\nPreferred timing:");
+  const smsHref = `sms:${PHONE}?&body=${SMS_MESSAGE}`;
+
+  ["textBtn", "textBtnMobile", "heroTextBtn", "bookingTextBtn"].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.href = smsHref;
+  });
+
+  const menuBtn = document.getElementById("menuBtn");
+  const closeMenuBtn = document.getElementById("closeMenuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const menuOverlay = document.getElementById("menuOverlay");
+
+  function openMenu(){
+    mobileMenu.classList.add("open");
+    mobileMenu.setAttribute("aria-hidden", "false");
+    menuOverlay.hidden = false;
+    menuBtn.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
+  function closeMenu(){
+    mobileMenu.classList.remove("open");
+    mobileMenu.setAttribute("aria-hidden", "true");
+    menuOverlay.hidden = true;
+    menuBtn.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  if(menuBtn && closeMenuBtn && mobileMenu && menuOverlay){
+    menuBtn.addEventListener("click", openMenu);
+    closeMenuBtn.addEventListener("click", closeMenu);
+    menuOverlay.addEventListener("click", closeMenu);
+    document.addEventListener("keydown", e => { if(e.key === "Escape") closeMenu(); });
+    mobileMenu.querySelectorAll("[data-close-menu]").forEach(el => el.addEventListener("click", closeMenu));
+  }
+</script>
+</body>
+</html>
