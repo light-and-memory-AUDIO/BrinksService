@@ -441,12 +441,21 @@
       </div>
 
       <button class="btn primary" type="submit">
-        Send Request
-      </button>
+  Send Request
+</button>
 
-      <p class="tiny" style="margin:0">
-        This opens your email app and creates a repair request automatically.
-      </p>
+<button class="btn" type="button" id="copyRequestBtn">
+  Copy Request
+</button>
+
+<div id="requestFallback" style="display:none">
+  <label for="requestFallbackText">Copy/paste this request</label>
+  <textarea id="requestFallbackText" readonly></textarea>
+</div>
+
+<p class="tiny" style="margin:0">
+  This opens your email app. If it does not open, use “Copy Request” and email it to info@imgdgroup.com.
+</p>
 
     </form>
   </div>
@@ -508,25 +517,23 @@
     document.addEventListener("keydown", e => { if(e.key === "Escape") closeMenu(); });
     mobileMenu.querySelectorAll("[data-close-menu]").forEach(el => el.addEventListener("click", closeMenu));
   }
-  // ===== Repair request form =====
+// ===== Repair request form =====
 
 const serviceForm = document.getElementById("serviceForm");
+const copyRequestBtn = document.getElementById("copyRequestBtn");
+const requestFallback = document.getElementById("requestFallback");
+const requestFallbackText = document.getElementById("requestFallbackText");
 
-if(serviceForm){
+function buildRepairRequest(){
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const appliance = document.getElementById("appliance").value;
+  const brand = document.getElementById("brand").value.trim();
+  const details = document.getElementById("details").value.trim();
 
-  serviceForm.addEventListener("submit", (e) => {
-    e.preventDefault();
+  const subject = `Repair Request - ${appliance || "Appliance"} - ${name || "Customer"}`;
 
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const appliance = document.getElementById("appliance").value;
-    const brand = document.getElementById("brand").value.trim();
-    const details = document.getElementById("details").value.trim();
-
-    const subject =
-      `Repair Request - ${appliance} - ${name}`;
-
-    const body =
+  const body =
 `Repair Request
 
 Name: ${name}
@@ -540,12 +547,51 @@ ${details}
 
 — Sent from Brink's Appliance Repair website`;
 
+  return { subject, body };
+}
+
+function showRepairFallback(subject, body){
+  requestFallback.style.display = "block";
+  requestFallbackText.value =
+`To: info@imgdgroup.com
+Subject: ${subject}
+
+${body}`;
+}
+
+if(serviceForm){
+  serviceForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const msg = buildRepairRequest();
+
+    showRepairFallback(msg.subject, msg.body);
+
     const mailto =
-      `mailto:info@imgdgroup.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      `mailto:info@imgdgroup.com?subject=${encodeURIComponent(msg.subject)}&body=${encodeURIComponent(msg.body)}`;
 
     window.location.href = mailto;
   });
+}
 
+if(copyRequestBtn){
+  copyRequestBtn.addEventListener("click", async () => {
+    const msg = buildRepairRequest();
+
+    showRepairFallback(msg.subject, msg.body);
+
+    try{
+      await navigator.clipboard.writeText(
+`To: info@imgdgroup.com
+Subject: ${msg.subject}
+
+${msg.body}`
+      );
+      copyRequestBtn.textContent = "Copied";
+    }catch{
+      copyRequestBtn.textContent = "Copy manually below";
+    }
+  });
 }
 </script>
 </body>
