@@ -2,23 +2,17 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Brink's Appliance Repair Service | Thousand Oaks</title>
 
   <meta
     name="description"
-    content="Brink's Appliance Repair Service — local, reliable appliance repair. $50/hour. Emergency refrigerator repair and same-day service available. Call or text 805-380-8312."
-  />
+    content="Brink's Appliance Repair Service. Local, reliable appliance repair. $50/hour. Call or text 805-380-8312."
+  >
 
-  <meta property="og:title" content="Brink's Appliance Repair Service" />
-  <meta
-    property="og:description"
-    content="Local • Reliable • Honest • Affordable appliance repair. Call or text 805-380-8312."
-  />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#F7F3EA" />
+  <meta name="theme-color" content="#F7F3EA">
 
   <style>
     :root {
@@ -27,8 +21,8 @@
       --surface2: #EFE7DA;
       --ink: #1F2933;
       --muted: #5D6875;
-      --line: rgba(31, 41, 51, .12);
-      --line2: rgba(31, 41, 51, .18);
+      --line: rgba(31,41,51,.12);
+      --line2: rgba(31,41,51,.18);
       --blue: #1E5AA8;
       --blue2: #E6F0FF;
       --gold: #F4B942;
@@ -36,7 +30,7 @@
       --red: #B42318;
       --radius: 20px;
       --max: 1080px;
-      --shadow: 0 18px 48px rgba(31, 41, 51, .08);
+      --shadow: 0 18px 48px rgba(31,41,51,.08);
     }
 
     * {
@@ -45,13 +39,12 @@
 
     html {
       scroll-behavior: smooth;
-      background: var(--bg);
     }
 
     body {
       margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system,
-        Segoe UI, Roboto, Helvetica, Arial;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, Arial, sans-serif;
       background: linear-gradient(
         180deg,
         #FBF8F1 0%,
@@ -60,7 +53,6 @@
       );
       color: var(--ink);
       line-height: 1.6;
-      font-size: 16px;
     }
 
     [hidden] {
@@ -74,7 +66,7 @@
 
     .wrap {
       max-width: var(--max);
-      margin: 0 auto;
+      margin: auto;
       padding: 26px 20px;
     }
 
@@ -83,13 +75,13 @@
     }
 
     .small {
-      font-size: 14px;
       color: var(--muted);
+      font-size: 14px;
     }
 
     .tiny {
-      font-size: 13px;
       color: var(--muted);
+      font-size: 13px;
     }
 
     .divider {
@@ -104,7 +96,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(247, 243, 234, .9);
+      background: rgba(247,243,234,.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
@@ -126,20 +118,23 @@
     .mark {
       width: 44px;
       height: 44px;
+      flex-shrink: 0;
       border-radius: 16px;
-      background: linear-gradient(135deg, var(--blue), #0D2F5F);
+      background: linear-gradient(
+        135deg,
+        var(--blue),
+        #0D2F5F
+      );
       color: white;
       display: grid;
       place-items: center;
       font-weight: 900;
-      letter-spacing: -.04em;
-      box-shadow: 0 10px 26px rgba(30, 90, 168, .18);
-      flex-shrink: 0;
+      box-shadow: 0 10px 26px rgba(30,90,168,.18);
     }
 
     .brandTitle {
       font-size: 14px;
-      line-height: 1.1;
+      line-height: 1.2;
       font-weight: 900;
       letter-spacing: .05em;
       text-transform: uppercase;
@@ -155,7 +150,6 @@
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
     nav.links a {
@@ -167,16 +161,15 @@
     }
 
     nav.links a:hover {
-      background: rgba(31, 41, 51, .05);
+      background: rgba(31,41,51,.05);
       color: var(--ink);
     }
 
     .cta {
       display: flex;
-      gap: 10px;
       align-items: center;
+      gap: 10px;
       flex-wrap: wrap;
-      justify-content: flex-end;
     }
 
     .ctaDesktop {
@@ -190,23 +183,18 @@
       justify-content: center;
       gap: 8px;
       padding: 10px 13px;
-      border-radius: 999px;
       border: 1px solid var(--line2);
-      background: rgba(255, 255, 255, .45);
+      border-radius: 999px;
+      background: rgba(255,255,255,.45);
       color: var(--ink);
       font-size: 13px;
       font-weight: 850;
       cursor: pointer;
-      white-space: nowrap;
-      transition: transform .08s ease, background .15s ease;
+      font-family: inherit;
     }
 
     .btn:hover {
       background: #fff;
-    }
-
-    .btn:active {
-      transform: translateY(1px);
     }
 
     .btn.primary {
@@ -219,23 +207,17 @@
       background: #174987;
     }
 
-    .btn.emergency {
-      background: var(--red);
-      border-color: var(--red);
-      color: white;
-    }
-
-    /* MOBILE MENU */
+    /* MOBILE NAVIGATION */
 
     .menuBtn {
       display: none;
     }
 
     .hamburger {
+      position: relative;
       width: 18px;
       height: 2px;
       background: var(--ink);
-      position: relative;
       border-radius: 99px;
     }
 
@@ -261,8 +243,8 @@
     .menuOverlay {
       position: fixed;
       inset: 0;
-      background: rgba(31, 41, 51, .35);
       z-index: 50;
+      background: rgba(31,41,51,.35);
       backdrop-filter: blur(4px);
     }
 
@@ -270,20 +252,20 @@
       position: fixed;
       top: 0;
       right: 0;
+      z-index: 60;
+      width: min(84vw,360px);
       height: 100vh;
       height: 100dvh;
-      width: min(84vw, 360px);
-      background: var(--bg);
-      z-index: 60;
       padding: 18px;
+      overflow-y: auto;
+      background: var(--bg);
       border-left: 1px solid var(--line);
       transform: translateX(102%);
-      transition: transform .18s ease;
+      transition: transform .2s ease;
+      visibility: hidden;
       display: grid;
       align-content: start;
       gap: 12px;
-      overflow-y: auto;
-      visibility: hidden;
     }
 
     .mobileMenu.open {
@@ -298,23 +280,19 @@
       gap: 12px;
     }
 
-    .mobileMenuActions {
+    .mobileMenuActions,
+    .mobileMenuNav {
       display: grid;
       gap: 10px;
     }
 
-    .mobileMenuNav {
-      display: grid;
-      gap: 8px;
-    }
-
     .mobileMenuNav a {
       padding: 10px 12px;
-      border-radius: 14px;
       border: 1px solid var(--line);
-      font-weight: 800;
+      border-radius: 14px;
+      background: rgba(255,255,255,.5);
       color: var(--muted);
-      background: rgba(255, 255, 255, .4);
+      font-weight: 800;
     }
 
     @media (max-width: 920px) {
@@ -342,26 +320,26 @@
     /* HERO */
 
     .hero {
-      margin-top: 22px;
       display: grid;
       grid-template-columns: 1.15fr .85fr;
       gap: 18px;
-      align-items: stretch;
+      margin-top: 22px;
     }
 
     .heroMain {
+      padding: 28px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: linear-gradient(
         180deg,
         #fff,
-        rgba(255, 255, 255, .62)
+        rgba(255,255,255,.62)
       );
-      padding: 28px;
       box-shadow: var(--shadow);
     }
 
     .heroSide {
+      padding: 22px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: linear-gradient(
@@ -369,7 +347,6 @@
         var(--blue2),
         #fff
       );
-      padding: 22px;
       box-shadow: var(--shadow);
       display: grid;
       align-content: start;
@@ -383,10 +360,10 @@
       padding: 6px 10px;
       border: 1px solid var(--line);
       border-radius: 999px;
-      background: rgba(30, 90, 168, .08);
+      background: rgba(30,90,168,.08);
+      color: var(--blue);
       font-size: 12px;
       font-weight: 900;
-      color: var(--blue);
       letter-spacing: .06em;
       text-transform: uppercase;
     }
@@ -394,23 +371,23 @@
     .dot {
       width: 8px;
       height: 8px;
-      border-radius: 99px;
+      border-radius: 50%;
       background: var(--gold);
     }
 
     h1 {
-      font-size: 44px;
-      line-height: 1.03;
-      letter-spacing: -.04em;
       margin: 14px 0 10px;
+      font-size: 44px;
+      line-height: 1.05;
+      letter-spacing: -.04em;
       font-weight: 950;
     }
 
     .lead {
-      font-size: 17px;
-      color: var(--muted);
       max-width: 62ch;
       margin: 0 0 16px;
+      font-size: 17px;
+      color: var(--muted);
     }
 
     .pillRow {
@@ -422,42 +399,24 @@
 
     .pill {
       padding: 8px 12px;
-      border-radius: 14px;
       border: 1px solid var(--line2);
-      background: rgba(31, 41, 51, .03);
+      border-radius: 14px;
+      background: rgba(31,41,51,.03);
       font-size: 13px;
       font-weight: 900;
     }
 
-    .pill.hot {
-      background: rgba(180, 35, 24, .09);
-      border-color: rgba(180, 35, 24, .18);
-      color: var(--red);
-    }
-
     .pill.good {
-      background: rgba(46, 139, 87, .10);
-      border-color: rgba(46, 139, 87, .20);
       color: var(--green);
+      background: rgba(46,139,87,.1);
     }
 
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
+    .pill.hot {
+      color: var(--red);
+      background: rgba(180,35,24,.09);
     }
 
-    @media (max-width: 540px) {
-      h1 {
-        font-size: 36px;
-      }
-
-      .heroMain {
-        padding: 22px;
-      }
-    }
-
-    /* GENERAL SECTIONS */
+    /* SECTIONS */
 
     section {
       padding: 28px 0;
@@ -466,16 +425,16 @@
 
     h2 {
       margin: 0 0 12px;
-      font-size: 14px;
-      letter-spacing: .10em;
-      text-transform: uppercase;
       color: var(--muted);
+      font-size: 14px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
       font-weight: 950;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 14px;
     }
 
@@ -484,11 +443,11 @@
     }
 
     .card {
+      padding: 18px;
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 18px;
-      background: rgba(255, 255, 255, .72);
-      box-shadow: 0 10px 28px rgba(31, 41, 51, .05);
+      background: rgba(255,255,255,.75);
+      box-shadow: 0 10px 28px rgba(31,41,51,.05);
     }
 
     .card h3 {
@@ -503,69 +462,41 @@
       font-size: 14.5px;
     }
 
-    .card ul {
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      font-size: 14.5px;
-      display: grid;
-      gap: 6px;
-    }
-
     .notice {
       margin-top: 14px;
       padding: 15px;
       border: 1px dashed var(--line2);
       border-radius: 16px;
-      background: rgba(239, 231, 218, .5);
+      background: rgba(239,231,218,.5);
       color: var(--muted);
       font-size: 14px;
-    }
-
-    @media (max-width: 900px) {
-      .grid,
-      .grid.two {
-        grid-template-columns: 1fr;
-      }
     }
 
     /* APPLIANCES */
 
     .applianceGrid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 14px;
     }
 
     .appliance {
+      padding: 16px;
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 16px;
-      background: #fff;
+      background: white;
     }
 
-    .appliance .emoji {
-      font-size: 24px;
+    .emoji {
       margin-bottom: 6px;
+      font-size: 24px;
     }
 
     .appliance strong {
       font-weight: 950;
     }
 
-    @media (max-width: 900px) {
-      .applianceGrid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .applianceGrid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* BRANDS AND AREAS */
+    /* BRANDS */
 
     .brands {
       display: flex;
@@ -575,13 +506,15 @@
 
     .brandChip {
       padding: 7px 10px;
-      border-radius: 999px;
       border: 1px solid var(--line);
-      background: #fff;
+      border-radius: 999px;
+      background: white;
+      color: var(--muted);
       font-size: 13px;
       font-weight: 800;
-      color: var(--muted);
     }
+
+    /* AREAS */
 
     .areas {
       columns: 3;
@@ -590,33 +523,24 @@
       font-size: 14px;
     }
 
-    @media (max-width: 800px) {
-      .areas {
-        columns: 2;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .areas {
-        columns: 1;
-      }
-    }
-
-    /* CONTACT FORM */
+    /* BOOKING */
 
     .bookingBox {
+      padding: 20px;
       border: 1px solid var(--line);
       border-radius: 18px;
-      background: linear-gradient(180deg, #fff, var(--blue2));
-      padding: 20px;
+      background: linear-gradient(
+        180deg,
+        white,
+        var(--blue2)
+      );
       box-shadow: var(--shadow);
     }
 
     .bigPhone {
+      margin: 4px 0 12px;
       font-size: 28px;
       font-weight: 950;
-      letter-spacing: -.02em;
-      margin: 4px 0 12px;
     }
 
     .serviceForm {
@@ -630,9 +554,9 @@
     }
 
     .formField label {
+      color: var(--ink);
       font-size: 14px;
       font-weight: 850;
-      color: var(--ink);
     }
 
     .requiredStar {
@@ -648,18 +572,18 @@
       padding: 12px 14px;
       border: 1px solid var(--line2);
       border-radius: 12px;
-      background: #fff;
+      background: white;
       color: var(--ink);
       font: inherit;
       font-size: 15px;
-      outline: none;
     }
 
     .formField input:focus,
     .formField select:focus,
     .formField textarea:focus {
+      outline: none;
       border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(30, 90, 168, .12);
+      box-shadow: 0 0 0 3px rgba(30,90,168,.12);
     }
 
     .formField textarea {
@@ -674,7 +598,6 @@
     .formActions {
       display: grid;
       gap: 10px;
-      margin-top: 4px;
     }
 
     .formActions .btn {
@@ -692,23 +615,23 @@
 
     #requestFallbackText {
       min-height: 260px;
-      resize: vertical;
       margin-top: 8px;
+      resize: vertical;
     }
 
     .formMessage {
       padding: 12px 14px;
       border-radius: 12px;
-      font-size: 14px;
-      background: rgba(46, 139, 87, .10);
+      background: rgba(46,139,87,.1);
       color: #21683F;
+      font-size: 14px;
     }
 
     /* FOOTER */
 
     footer {
-      border-top: 1px solid var(--line);
       padding: 28px 0;
+      border-top: 1px solid var(--line);
       color: var(--muted);
       font-size: 14px;
     }
@@ -720,13 +643,46 @@
       align-items: start;
     }
 
+    /* RESPONSIVE */
+
     @media (max-width: 900px) {
+      .hero,
+      .grid,
+      .grid.two,
       .footerGrid {
         grid-template-columns: 1fr;
       }
 
+      .applianceGrid {
+        grid-template-columns: 1fr 1fr;
+      }
+
       .footerContact {
         text-align: left !important;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .areas {
+        columns: 2;
+      }
+    }
+
+    @media (max-width: 540px) {
+      h1 {
+        font-size: 36px;
+      }
+
+      .heroMain {
+        padding: 22px;
+      }
+
+      .applianceGrid {
+        grid-template-columns: 1fr;
+      }
+
+      .areas {
+        columns: 1;
       }
     }
   </style>
@@ -740,25 +696,20 @@
     <div class="wrap">
       <div class="nav">
 
-        <a
-          class="brand"
-          href="#top"
-          aria-label="Brink's Appliance Repair Service home"
-        >
+        <a class="brand" href="#top">
           <div class="mark">B</div>
 
           <div>
             <div class="brandTitle">
               Brink's Appliance Repair Service
             </div>
-
             <div class="brandSub">
               Thousand Oaks • Local appliance repair
             </div>
           </div>
         </a>
 
-        <nav class="links" aria-label="Site navigation">
+        <nav class="links" aria-label="Main navigation">
           <a href="#services">Services</a>
           <a href="#appliances">Appliances</a>
           <a href="#brands">Brands</a>
@@ -767,21 +718,10 @@
         </nav>
 
         <div class="cta">
-
           <div class="ctaDesktop">
             <a class="btn" href="tel:+18053808312">Call</a>
-
-            <a
-              class="btn"
-              id="textBtn"
-              href="sms:+18053808312"
-            >
-              Text
-            </a>
-
-            <a class="btn primary" href="#booking">
-              Book repair
-            </a>
+            <a class="btn" id="textBtn" href="sms:+18053808312">Text</a>
+            <a class="btn primary" href="#booking">Book repair</a>
           </div>
 
           <button
@@ -794,19 +734,15 @@
           >
             <span class="hamburger" aria-hidden="true"></span>
           </button>
-
         </div>
+
       </div>
     </div>
   </header>
 
   <!-- MOBILE MENU -->
 
-  <div
-    class="menuOverlay"
-    id="menuOverlay"
-    hidden
-  ></div>
+  <div class="menuOverlay" id="menuOverlay" hidden></div>
 
   <aside
     class="mobileMenu"
@@ -814,82 +750,59 @@
     aria-hidden="true"
     inert
   >
-
     <div class="mobileMenuTop">
-
       <div style="display:flex;align-items:center;gap:10px">
-
         <div class="mark">B</div>
 
         <div>
           <div class="brandTitle" style="font-size:13px">
             Brink's Appliance Repair
           </div>
-
           <div class="brandSub">
             Local • Reliable • Honest
           </div>
         </div>
-
       </div>
 
-      <button
-        class="btn"
-        id="closeMenuBtn"
-        type="button"
-      >
+      <button class="btn" id="closeMenuBtn" type="button">
         Close
       </button>
-
     </div>
 
     <div class="divider"></div>
 
     <div class="mobileMenuActions">
-
       <a class="btn" href="tel:+18053808312">
         Call 805-380-8312
       </a>
 
-      <a
-        class="btn"
-        id="textBtnMobile"
-        href="sms:+18053808312"
-      >
+      <a class="btn" id="textBtnMobile" href="sms:+18053808312">
         Text now
       </a>
 
-      <a
-        class="btn primary"
-        href="#booking"
-        data-close-menu
-      >
+      <a class="btn primary" href="#booking" data-close-menu>
         Book repair
       </a>
-
     </div>
 
     <div class="divider"></div>
 
-    <nav class="mobileMenuNav" aria-label="Mobile navigation">
-
+    <nav class="mobileMenuNav">
       <a href="#services" data-close-menu>Services</a>
       <a href="#appliances" data-close-menu>Appliances</a>
       <a href="#brands" data-close-menu>Brands</a>
       <a href="#areas" data-close-menu>Service Areas</a>
       <a href="#booking" data-close-menu>Book</a>
-
     </nav>
-
   </aside>
 
-  <!-- MAIN WEBSITE -->
+  <!-- WEBSITE CONTENT -->
 
   <main id="top" class="wrap">
 
     <!-- HERO -->
 
-    <section class="hero" aria-label="Introduction">
+    <section class="hero">
 
       <div class="heroMain">
 
@@ -910,35 +823,18 @@
         </p>
 
         <div class="pillRow">
-
-          <div class="pill good">
-            $50 / hour
-          </div>
-
-          <div class="pill hot">
-            Emergency refrigerator repair
-          </div>
-
-          <div class="pill">
-            Text or call 805-380-8312
-          </div>
-
+          <div class="pill good">$50 / hour</div>
+          <div class="pill hot">Emergency refrigerator repair</div>
+          <div class="pill">Text or call 805-380-8312</div>
         </div>
 
-        <div class="cta" style="justify-content:flex-start">
+        <div class="cta">
 
-          <a
-            class="btn primary"
-            href="tel:+18053808312"
-          >
+          <a class="btn primary" href="tel:+18053808312">
             Call now
           </a>
 
-          <a
-            class="btn"
-            id="heroTextBtn"
-            href="sms:+18053808312"
-          >
+          <a class="btn" id="heroTextBtn" href="sms:+18053808312">
             Text for repair
           </a>
 
@@ -952,39 +848,28 @@
 
       <div class="heroSide">
 
-        <h2 style="margin:0">
-          Why customers call Brink’s
-        </h2>
+        <h2 style="margin:0">Why customers call Brink’s</h2>
 
-        <div class="card" style="box-shadow:none;background:#fff">
-
+        <div class="card" style="background:white">
           <h3>🙂 Honest work</h3>
-
           <p>
             Reasonable rates and clear communication before
             the work begins.
           </p>
-
         </div>
 
-        <div class="card" style="box-shadow:none;background:#fff">
-
+        <div class="card" style="background:white">
           <h3>⚡ Quick response</h3>
-
           <p>
             Text or call to get back up and running today.
           </p>
-
         </div>
 
-        <div class="card" style="box-shadow:none;background:#fff">
-
+        <div class="card" style="background:white">
           <h3>⭐ All Major Brands</h3>
-
           <p>
             Specializing in high-end luxury and commercial appliances.
           </p>
-
         </div>
 
       </div>
@@ -1000,49 +885,37 @@
       <div class="grid">
 
         <div class="card">
-
           <h3>Real diagnostics, not guesswork.</h3>
-
           <p>
             Years of experience troubleshooting appliance problems
             and fixing the root issue.
           </p>
-
         </div>
 
         <div class="card">
-
           <h3>Local reputation</h3>
-
           <p>
             A local technician serving local customers,
             built through referrals and reliable work.
           </p>
-
         </div>
 
         <div class="card">
-
           <h3>Helpful guidance</h3>
-
           <p>
             Free tips and practical advice are shared throughout
             the process when helpful.
           </p>
-
         </div>
 
       </div>
 
       <div class="notice">
-
         <strong style="color:var(--ink)">
           Emergency same-day service available:
         </strong>
-
-        Refrigerator repair and urgent appliance issues also
-        available depending on schedule and location.
-
+        Refrigerator repair and urgent appliance issues
+        may be available depending on schedule and location.
       </div>
 
     </section>
@@ -1129,7 +1002,6 @@
         </p>
 
         <div class="brands">
-
           <span class="brandChip">Samsung</span>
           <span class="brandChip">LG</span>
           <span class="brandChip">Whirlpool</span>
@@ -1151,7 +1023,6 @@
           <span class="brandChip">Amana</span>
           <span class="brandChip">Electrolux</span>
           <span class="brandChip">LG Studio</span>
-
         </div>
 
       </div>
@@ -1213,7 +1084,7 @@
 
       <div class="grid two">
 
-        <!-- LEFT SIDE -->
+        <!-- CONTACT INFORMATION -->
 
         <div class="bookingBox">
 
@@ -1226,17 +1097,14 @@
             805-380-8312
           </div>
 
-          <p class="muted" style="margin:0 0 16px">
+          <p class="muted">
             Text or call for immediate help, or send
-            a repair request below.
+            a repair request using the form.
           </p>
 
-          <div class="cta" style="justify-content:flex-start">
+          <div class="cta">
 
-            <a
-              class="btn primary"
-              href="tel:+18053808312"
-            >
+            <a class="btn primary" href="tel:+18053808312">
               Call now
             </a>
 
@@ -1251,24 +1119,16 @@
           </div>
 
           <div class="notice">
-
-            <strong style="color:var(--ink)">
-              Rate:
-            </strong>
-
+            <strong style="color:var(--ink)">Rate:</strong>
             $50/hour. Emergency refrigerator repair
             and same-day service may be available.
-
           </div>
 
         </div>
 
-        <!-- RIGHT SIDE: CONTACT FORM -->
+        <!-- CONTACT FORM -->
 
-        <form
-          id="serviceForm"
-          class="card serviceForm"
-        >
+        <form id="serviceForm" class="card serviceForm">
 
           <h3 style="margin:0">
             Tell us about your appliance
@@ -1281,10 +1141,8 @@
           <!-- NAME -->
 
           <div class="formField">
-
             <label for="name">
-              Full Name
-              <span class="requiredStar">*</span>
+              Full Name <span class="requiredStar">*</span>
             </label>
 
             <input
@@ -1294,17 +1152,14 @@
               placeholder="Your full name"
               autocomplete="name"
               required
-            />
-
+            >
           </div>
 
           <!-- PHONE -->
 
           <div class="formField">
-
             <label for="phone">
-              Phone Number
-              <span class="requiredStar">*</span>
+              Phone Number <span class="requiredStar">*</span>
             </label>
 
             <input
@@ -1314,17 +1169,14 @@
               placeholder="(805) 555-5555"
               autocomplete="tel"
               required
-            />
-
+            >
           </div>
 
-          <!-- CUSTOMER EMAIL -->
+          <!-- EMAIL -->
 
           <div class="formField">
-
             <label for="customerEmail">
-              Email Address
-              <span class="requiredStar">*</span>
+              Email Address <span class="requiredStar">*</span>
             </label>
 
             <input
@@ -1334,17 +1186,14 @@
               placeholder="you@example.com"
               autocomplete="email"
               required
-            />
-
+            >
           </div>
 
-          <!-- SERVICE CITY -->
+          <!-- CITY -->
 
           <div class="formField">
-
             <label for="city">
-              City
-              <span class="requiredStar">*</span>
+              City <span class="requiredStar">*</span>
             </label>
 
             <input
@@ -1354,48 +1203,35 @@
               placeholder="Thousand Oaks"
               autocomplete="address-level2"
               required
-            />
-
+            >
           </div>
 
           <!-- APPLIANCE -->
 
           <div class="formField">
-
             <label for="appliance">
-              Appliance
-              <span class="requiredStar">*</span>
+              Appliance <span class="requiredStar">*</span>
             </label>
 
-            <select
-              id="appliance"
-              name="appliance"
-              required
-            >
-
+            <select id="appliance" name="appliance" required>
               <option value="" selected disabled>
                 Select an appliance
               </option>
-
-              <option value="Refrigerator">Refrigerator</option>
-              <option value="Washer">Washer</option>
-              <option value="Dryer">Dryer</option>
-              <option value="Dishwasher">Dishwasher</option>
-              <option value="Microwave">Microwave</option>
-              <option value="Stove / Oven">Stove / Oven</option>
-              <option value="Other">Other</option>
-
+              <option>Refrigerator</option>
+              <option>Washer</option>
+              <option>Dryer</option>
+              <option>Dishwasher</option>
+              <option>Microwave</option>
+              <option>Stove / Oven</option>
+              <option>Other</option>
             </select>
-
           </div>
 
           <!-- BRAND -->
 
           <div class="formField">
-
             <label for="brand">
-              Appliance Brand
-              <span class="requiredStar">*</span>
+              Appliance Brand <span class="requiredStar">*</span>
             </label>
 
             <input
@@ -1404,49 +1240,51 @@
               type="text"
               placeholder="Samsung, LG, Whirlpool..."
               required
-            />
-
+            >
           </div>
 
           <!-- PROBLEM -->
 
           <div class="formField">
-
             <label for="details">
-              Problem Details
-              <span class="requiredStar">*</span>
+              Problem Details <span class="requiredStar">*</span>
             </label>
 
             <textarea
               id="details"
               name="details"
-              placeholder="What is the appliance doing? Include any error codes or unusual sounds."
+              placeholder="Describe the problem, including any error codes or unusual sounds."
               required
             ></textarea>
-
           </div>
 
           <!-- REFERRAL DROPDOWN -->
 
-          
-<div class="formField">
-  <label for="referral">
-    Where did you hear about us? *
-  </label>
+          <div class="formField">
 
-  <select id="referral" name="referral" required>
-    <option value="" selected disabled>
-      Select an option
-    </option>
-    <option value="Facebook">Facebook</option>
-    <option value="Instagram">Instagram</option>
-    <option value="Word of Mouth">Word of Mouth</option>
-    <option value="Other">Other</option>
-  </select>
-</div>
+            <label for="referral">
+              Where did you hear about us?
+              <span class="requiredStar">*</span>
+            </label>
 
+            <select
+              id="referral"
+              name="referral"
+              required
+            >
+              <option value="" selected disabled>
+                Select an option
+              </option>
 
-          <!-- APPEARS ONLY WHEN OTHER IS SELECTED -->
+              <option value="Facebook">Facebook</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Word of Mouth">Word of Mouth</option>
+              <option value="Other">Other</option>
+            </select>
+
+          </div>
+
+          <!-- OTHER REFERRAL FIELD -->
 
           <div
             class="formField"
@@ -1464,7 +1302,7 @@
               name="otherReferral"
               type="text"
               placeholder="Where did you find us?"
-            />
+            >
 
           </div>
 
@@ -1472,40 +1310,30 @@
 
           <div class="formActions">
 
-            <button
-              class="btn primary"
-              type="submit"
-            >
+            <button class="btn primary" type="submit">
               Send Request
             </button>
 
             <button
               class="btn"
-              type="button"
               id="copyRequestBtn"
+              type="button"
             >
               Copy Request
             </button>
 
           </div>
 
-          <!-- FALLBACK IF EMAIL APP DOES NOT OPEN -->
+          <!-- EMAIL FALLBACK -->
 
           <div id="requestFallback" hidden>
 
-            <strong>
-              Your repair request
-            </strong>
+            <strong>Your repair request</strong>
 
             <p class="small">
-              If your email app did not open,
-              copy this request and email it to
-              <a
-                href="mailto:info@imgdgroup.com"
-                style="color:var(--blue);text-decoration:underline"
-              >
-                info@imgdgroup.com
-              </a>.
+              If your email app did not open, copy the
+              request below and email it to
+              info@imgdgroup.com.
             </p>
 
             <textarea
@@ -1524,10 +1352,10 @@
             hidden
           ></div>
 
-          <p class="tiny" style="margin:0">
-            Send Request opens your email app with your
-            information filled in. You must press Send
-            in your email app to finish.
+          <p class="tiny">
+            Send Request opens your email app.
+            You must press Send in your email app
+            to complete the request.
           </p>
 
         </form>
@@ -1551,22 +1379,13 @@
           <div class="mark">B</div>
 
           <div>
-
-            <div
-              style="
-                font-weight:950;
-                letter-spacing:.06em;
-                text-transform:uppercase;
-                color:var(--ink);
-              "
-            >
+            <div class="brandTitle">
               Brink's Appliance Repair Service
             </div>
 
             <div class="tiny">
               Local • Reliable • Honest • Affordable
             </div>
-
           </div>
 
         </div>
@@ -1574,10 +1393,7 @@
         <div class="footerContact" style="text-align:right">
 
           <div>
-            <strong style="color:var(--ink)">
-              Call/Text:
-            </strong>
-
+            <strong>Call/Text:</strong>
             <a href="tel:+18053808312">
               805-380-8312
             </a>
@@ -1605,9 +1421,7 @@
 
   <script>
 
-    // ========================================
     // TEXT MESSAGE BUTTONS
-    // ========================================
 
     const PHONE = "+18053808312";
 
@@ -1631,18 +1445,16 @@
       "bookingTextBtn"
     ].forEach(id => {
 
-      const el = document.getElementById(id);
+      const element = document.getElementById(id);
 
-      if (el) {
-        el.href = smsHref;
+      if (element) {
+        element.href = smsHref;
       }
 
     });
 
 
-    // ========================================
     // MOBILE MENU
-    // ========================================
 
     const menuBtn =
       document.getElementById("menuBtn");
@@ -1707,59 +1519,33 @@
     }
 
 
-    if (
-      menuBtn &&
-      closeMenuBtn &&
-      mobileMenu &&
-      menuOverlay
-    ) {
+    menuBtn.addEventListener("click", openMenu);
 
-      menuBtn.addEventListener(
-        "click",
-        openMenu
-      );
+    closeMenuBtn.addEventListener("click", closeMenu);
 
-      closeMenuBtn.addEventListener(
-        "click",
-        closeMenu
-      );
+    menuOverlay.addEventListener("click", closeMenu);
 
-      menuOverlay.addEventListener(
-        "click",
-        closeMenu
-      );
+    document.addEventListener("keydown", event => {
 
-      document.addEventListener(
-        "keydown",
-        e => {
+      if (
+        event.key === "Escape" &&
+        mobileMenu.classList.contains("open")
+      ) {
+        closeMenu();
+      }
 
-          if (
-            e.key === "Escape" &&
-            mobileMenu.classList.contains("open")
-          ) {
-            closeMenu();
-          }
+    });
 
-        }
-      );
+    mobileMenu
+      .querySelectorAll("[data-close-menu]")
+      .forEach(link => {
 
-      mobileMenu
-        .querySelectorAll("[data-close-menu]")
-        .forEach(el => {
+        link.addEventListener("click", closeMenu);
 
-          el.addEventListener(
-            "click",
-            closeMenu
-          );
-
-        });
-
-    }
+      });
 
 
-    // ========================================
     // REFERRAL DROPDOWN
-    // ========================================
 
     const referralSelect =
       document.getElementById("referral");
@@ -1771,28 +1557,23 @@
       document.getElementById("otherReferral");
 
 
-    referralSelect.addEventListener(
-      "change",
-      () => {
+    referralSelect.addEventListener("change", () => {
 
-        const isOther =
-          referralSelect.value === "Other";
+      const selectedOther =
+        referralSelect.value === "Other";
 
-        otherReferralBox.hidden = !isOther;
+      otherReferralBox.hidden = !selectedOther;
 
-        otherReferralInput.required = isOther;
+      otherReferralInput.required = selectedOther;
 
-        if (!isOther) {
-          otherReferralInput.value = "";
-        }
-
+      if (!selectedOther) {
+        otherReferralInput.value = "";
       }
-    );
+
+    });
 
 
-    // ========================================
-    // REPAIR REQUEST FORM
-    // ========================================
+    // CONTACT FORM
 
     const serviceForm =
       document.getElementById("serviceForm");
@@ -1810,27 +1591,30 @@
       document.getElementById("formMessage");
 
 
-    // Validate all required fields before
-    // sending OR copying the request.
+    // PREVENT INCOMPLETE REQUESTS
 
     function validateRepairForm() {
 
-      // Native browser validation:
-      // required fields, email format, etc.
+      // Clear old custom validation messages.
+
+      const textFields =
+        serviceForm.querySelectorAll(
+          "input[required], textarea[required]"
+        );
+
+      textFields.forEach(field => {
+        field.setCustomValidity("");
+      });
+
+      // Check required fields and email format.
 
       if (!serviceForm.reportValidity()) {
         return false;
       }
 
-      // Also reject fields containing
-      // only spaces.
+      // Reject answers containing only spaces.
 
-      const requiredFields =
-        serviceForm.querySelectorAll(
-          "input[required], textarea[required]"
-        );
-
-      for (const field of requiredFields) {
+      for (const field of textFields) {
 
         if (!field.value.trim()) {
 
@@ -1839,12 +1623,6 @@
           );
 
           field.reportValidity();
-
-          field.addEventListener(
-            "input",
-            () => field.setCustomValidity(""),
-            { once: true }
-          );
 
           return false;
 
@@ -1857,8 +1635,7 @@
     }
 
 
-    // Build the complete email using
-    // the customer's form answers.
+    // BUILD EMAIL
 
     function buildRepairRequest() {
 
@@ -1929,7 +1706,7 @@ PROBLEM DETAILS
 ${details}
 
 
-HOW THEY FOUND US
+WHERE THEY HEARD ABOUT US
 
 ${referralAnswer}
 
@@ -1946,14 +1723,9 @@ Sent from Brink's Appliance Repair website`;
     }
 
 
-    // Show the completed request on the
-    // website if the customer's email app
-    // does not open.
+    // SHOW COPYABLE REQUEST
 
-    function showRepairFallback(
-      subject,
-      body
-    ) {
+    function showRepairFallback(subject, body) {
 
       requestFallback.hidden = false;
 
@@ -1967,7 +1739,7 @@ ${body}`;
     }
 
 
-    // Display a status message.
+    // STATUS MESSAGE
 
     function showFormMessage(message) {
 
@@ -1978,70 +1750,60 @@ ${body}`;
     }
 
 
-    // ========================================
-    // SEND REQUEST BUTTON
-    // ========================================
+    // SEND REQUEST
 
-    serviceForm.addEventListener(
-      "submit",
-      e => {
+    serviceForm.addEventListener("submit", event => {
 
-        e.preventDefault();
+      event.preventDefault();
 
-        if (!validateRepairForm()) {
-          return;
-        }
-
-        const msg = buildRepairRequest();
-
-        showRepairFallback(
-          msg.subject,
-          msg.body
-        );
-
-        showFormMessage(
-          "Your request is ready. If your email app opens, press Send to finish. Otherwise, copy the request below."
-        );
-
-        const mailto =
-          `mailto:info@imgdgroup.com` +
-          `?subject=${encodeURIComponent(msg.subject)}` +
-          `&body=${encodeURIComponent(msg.body)}`;
-
-        window.location.href = mailto;
-
+      if (!validateRepairForm()) {
+        return;
       }
-    );
+
+      const request = buildRepairRequest();
+
+      showRepairFallback(
+        request.subject,
+        request.body
+      );
+
+      showFormMessage(
+        "Your request is ready. Press Send in your email app. If it does not open, copy the request below."
+      );
+
+      const emailLink =
+        `mailto:info@imgdgroup.com` +
+        `?subject=${encodeURIComponent(request.subject)}` +
+        `&body=${encodeURIComponent(request.body)}`;
+
+      window.location.href = emailLink;
+
+    });
 
 
-    // ========================================
-    // COPY REQUEST BUTTON
-    // ========================================
+    // COPY REQUEST
 
     copyRequestBtn.addEventListener(
       "click",
       async () => {
 
-        // Do not allow copying an
-        // incomplete repair request.
-
         if (!validateRepairForm()) {
           return;
         }
 
-        const msg = buildRepairRequest();
+        const request = buildRepairRequest();
 
         showRepairFallback(
-          msg.subject,
-          msg.body
+          request.subject,
+          request.body
         );
 
         const fullRequest =
 `To: info@imgdgroup.com
 
-Subject: ${msg.subject}
+Subject: ${request.subject}
 
-${msg.body}`;
+${request.body}`;
 
 
         try {
@@ -2050,8 +1812,7 @@ ${msg.body}`;
             fullRequest
           );
 
-          copyRequestBtn.textContent =
-            "Copied!";
+          copyRequestBtn.textContent = "Copied!";
 
           showFormMessage(
             "Request copied. Paste it into an email and send it to info@imgdgroup.com."
@@ -2067,7 +1828,7 @@ ${msg.body}`;
           requestFallbackText.select();
 
           showFormMessage(
-            "Automatic copying is unavailable. Select and copy the request shown below."
+            "Select and copy the request below."
           );
 
         }
@@ -2076,20 +1837,22 @@ ${msg.body}`;
     );
 
 
-    // Reset the copy button whenever
-    // the customer edits the form.
+    // RESET MESSAGES WHEN FORM CHANGES
 
-    serviceForm.addEventListener(
-      "input",
-      () => {
+    serviceForm.addEventListener("input", event => {
 
-        copyRequestBtn.textContent =
-          "Copy Request";
-
-        formMessage.hidden = true;
-
+      if (
+        event.target &&
+        typeof event.target.setCustomValidity === "function"
+      ) {
+        event.target.setCustomValidity("");
       }
-    );
+
+      copyRequestBtn.textContent = "Copy Request";
+
+      formMessage.hidden = true;
+
+    });
 
   </script>
 
